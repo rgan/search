@@ -1,0 +1,36 @@
+.alignleft {
+float: left;
+}
+.alignright {
+float: right;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.subtitle {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.errors {
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-weight: normal;
+   color: #ff0000;
+}
+
+tr.d0 td {
+	background-color: #FCF6CF;
+    color: black;
+    border: 1px solid black;
+}
+
+tr.d1 td { border: 1px solid black; }
