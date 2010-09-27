@@ -29,7 +29,7 @@ public class PersonFactoryTest {
     @Test
     public void shouldParsePerson() throws Exception {
 
-        FacebookClient client = mock(FacebookClient.class);
+        FBClient client = mock(FBClient.class);
         when(client.getPersonData("758702630", false)).thenReturn("{\"id\": \"758702630\", \"name\": \"foo\", \"likes\": {}}");
         final PersonFactory personFactory = new PersonFactory(client);
         String json = "{\n" +

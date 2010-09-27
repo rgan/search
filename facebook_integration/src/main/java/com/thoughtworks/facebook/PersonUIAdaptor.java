@@ -13,7 +13,7 @@ public class PersonUIAdaptor {
 
     public String describe(int depth) {
         StringBuilder description = new StringBuilder();
-        description.append("<ul><li>").append(getDashes(depth)).append("Name:").append(person.getNameOrId());
+        description.append("<ul><li>").append("Name:").append(person.getNameOrId());
         description.append("(").append(person.getFriends().size()).append(")");
         if (person.getLikes().size() > 0) {
             description.append("<br>Likes:<br>");
@@ -29,13 +29,5 @@ public class PersonUIAdaptor {
         }
         description.append("</li></ul>");
         return description.toString();
-    }
-
-    private String getDashes(int depth) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < depth; i++) {
-            result.append("----");
-        }
-        return result.toString();
     }
 }

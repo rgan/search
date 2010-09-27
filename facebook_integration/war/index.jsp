@@ -1,7 +1,7 @@
-<%@ page import="com.thoughtworks.facebook.FacebookClient" %>
 <%@ page import="com.thoughtworks.facebook.Person" %>
 <%@ page import="com.thoughtworks.facebook.PersonFactory" %>
 <%@ page import="com.thoughtworks.facebook.PersonUIAdaptor" %>
+<%@ page import="com.thoughtworks.facebook.FBClient" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,7 +10,7 @@
 </head>
 <body>
 <%
-    FacebookClient facebookClient = new FacebookClient();
+    FBClient facebookClient = new FBClient();
     String code = (String) request.getParameter("code");
     if (code != null) {
         if (facebookClient.setupAccessToken(code)) {

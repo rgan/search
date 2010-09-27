@@ -10,14 +10,14 @@ public class PersonFactory {
     private static final int MAX_DEPTH = 4;
     private static final int MAX_FRIENDS = 5;
 
-    private FacebookClient facebookClient;
+    private FBClient FBClient;
 
-    public PersonFactory(FacebookClient facebookClient) {
-        this.facebookClient = facebookClient;
+    public PersonFactory(FBClient FBClient) {
+        this.FBClient = FBClient;
     }
 
     public Person me() throws Exception {
-        return from("me", facebookClient.getPersonData("me", true));
+        return from("me", FBClient.getPersonData("me", true));
     }
 
     public Person from(String id, String personJson, int depth) throws Exception {
@@ -31,7 +31,7 @@ public class PersonFactory {
                 if (friendId != null) {
                     String data = getDataWithFriends(friendId);
                     if (data == null) {
-                       data = facebookClient.getPersonData(friendId, false); 
+                       data = FBClient.getPersonData(friendId, false);
                     }
                     Person friend = from(friendId, data, depth + 1);
                     friends.add(friend);
@@ -49,7 +49,7 @@ public class PersonFactory {
 
     private String getDataWithFriends(String friendId) {
         try {
-            String data= facebookClient.getPersonData(friendId, true);
+            String data= FBClient.getPersonData(friendId, true);
             JSONObject jsonObject = JSONObject.fromObject(data);
             if (jsonObject.get("error") != null) {
                 return null;
